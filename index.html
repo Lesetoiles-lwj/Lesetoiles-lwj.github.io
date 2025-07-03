@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>YUSHI'S WORLD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    :root {
+      --accent-color: #3366ff;
+      --light-bg: #f2f6ff;
+      --fade-duration: 0.8s;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fefefe;
+      color: #333;
+    }
+    header {
+      position: relative;
+    }
+    header img {
+      max-height: 240px;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .search-container {
+      text-align: center;
+      padding: 1.5em 1em;
+      background: var(--light-bg);
+      animation: fadeIn var(--fade-duration) ease-out;
+    }
+    input[type="text"] {
+      padding: 0.6em 1em;
+      width: 90%;
+      max-width: 400px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+    }
+    .icon-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      margin: 1.2em 0;
+      animation: fadeIn var(--fade-duration) ease-out;
+    }
+    .icon-links a {
+      text-align: center;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .icon-links img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .icon-links img:hover {
+      transform: scale(1.1);
+    }
+    details {
+      padding: 1em;
+      margin: 1em auto;
+      max-width: 800px;
+      background: #fff;
+      border: 1px solid #e3e3e3;
+      border-radius: 8px;
+      animation: fadeIn var(--fade-duration) ease-out;
+    }
+    .section {
+      padding: 1em;
+      animation: fadeIn var(--fade-duration) ease-out;
+    }
+    .section h3 {
+      margin-top: 2em;
+      border-left: 5px solid var(--accent-color);
+      padding-left: 0.5em;
+    }
+    .section ul {
+      padding-left: 1.5em;
+    }
+    .section li {
+      margin: 0.5em 0;
+    }
+    .section a {
+      text-decoration: none;
+      color: var(--accent-color);
+    }
+
+    /* 导航按钮和侧栏 */
+    .nav-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    .nav-panel {
+      position: fixed;
+      right: -220px;
+      top: 0;
+      height: 100%;
+      width: 200px;
+      background: white;
+      border-left: 1px solid #ddd;
+      padding: 1em;
+      overflow-y: auto;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+      transition: right 0.3s ease-out;
+      z-index: 998;
+    }
+    .nav-panel.show {
+      right: 0;
+    }
+    .nav-panel a {
+      display: block;
+      margin: 0.5em 0;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      .nav-panel {
+        width: 160px;
+      }
+    }
+  
+  .about-card {
+    margin: 2em auto;
+    max-width: 800px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1.5em;
+    animation: fadeIn 0.8s ease-out;
+  }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <img src="bar.jpg" alt="YUSHI Banner">
+  </header>
+
+  <div class="search-container">
+    <input type="text" placeholder="请输入关键词..." oninput="filterItems(this.value)">
+  </div>
+
+  <div class="icon-links">
+    <a href="https://weibo.com/u/3970339778" target="_blank"><img src="证件照.jpg"><br>微博</a>
+    <a href=" https://v.douyin.com/aVWbcvGj6bg/ 9@9.com :7pm" target="_blank"><img src="douyin.jpg"><br>抖音</a>
+    <a href="https://space.bilibili.com/100478651" target="_blank"><img src="bili.jpg"><br>B站</a>
+    <a href="https://www.xiaohongshu.com/user/profile/6719f1b9000000001d033be1?xsec_token=YBXYfkRXd1pkYkVYV4Ej2popJziN3dqjB6yVy6H4YhWOE=&xsec_source=app_share&xhsshare=CopyLink&appuid=5f284b0d00000000010043a7&apptime=1751554853&share_id=070d13224bff428eaec60fb64feaff32 target="_blank"><img src="xiaohongshu.jpg"><br>小红书</a>
+  </div>
+
+  <div class="about-card"><h2>YUSHI 简介</h2>
+    <summary><strong>YUSHI 简介 </strong></summary>
+    <div class="section">
+      <p>姓名：YUSHI（得能勇志；유우시；ユウシ）<br>
+      生日：2004.04.05<br>
+      星座：白羊座<br>
+      国籍：日本<br>
+      出生地：东京<br>
+      昵称：ushi<br>
+      练习时长：6年+<br>
+      性格：可爱的性格<br>
+      座右铭：因果报应→幸福地生活<br>
+      兴趣：足球（最爱的运动），任天堂（塞尔达传说），我的世界<br>
+      最珍惜的东西：任天堂Switch<br>
+      梦想成为艺人的契机：看到EXO前辈和其他Kpop艺人以后开始学习舞蹈<br>
+      榜样：EXO的KAI前辈<br>
+      mbti：ISFJ→ESFJ→ISFJ<br>
+      最喜欢的颜色：蓝色和黑色→蓝色&白色<br>
+      最爱的词语：爱<br>
+      最爱的歌曲：Michael Jackson《Smooth Criminal》<br>
+      最想拥有的超能力：飞行<br>
+      最爱的食物：拉面，贡茶<br>
+      官方emoji：⭐（星星）<br>
+      官方定位：主舞、领唱<br>
+      动物塑：小猫<br>
+      习惯：睡觉之前吃夜宵<br>
+      生存的意义：跳舞<br>
+      养的宠物：toiro（贵宾犬）、yuru（吉娃娃）<br>
+      安静、冷静且非常害羞的shy boy<br>
+      喜欢和朋友在一起玩<br>
+      性格是热心、善良、耐心<br>
+      如果没有做音乐的话，会做足球运动员<br>
+      除了出道以外，生活中一定要实现的梦想是【世界巡演】<br>
+      ♡看电影   ♡跳舞   ♡吃辣</p>
+    </div>
+  </div>
+
+  <button class="nav-toggle" onclick="toggleNav()">📂</button>
+  <div class="nav-panel" id="navPanel"></div>
+  <div class="section" id="contentArea"></div>
+
+  <script src="nav_data.js"></script>
+  <script>
+    const nav = document.getElementById("navPanel");
+    const content = document.getElementById("contentArea");
+
+    function toggleNav() {
+      nav.classList.toggle("show");
+    }
+
+    function renderAll() {
+      content.innerHTML = "";
+      nav.innerHTML = "";
+      for (const folder in navData) {
+        const id = folder.replace(/[^a-zA-Z0-9]/g, "_");
+        const header = document.createElement("h3");
+        header.id = id;
+        header.textContent = folder;
+        content.appendChild(header);
+
+        const ul = document.createElement("ul");
+        navData[folder].forEach(item => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="${item.url}" target="_blank">${item.title}</a>`;
+          ul.appendChild(li);
+        });
+        content.appendChild(ul);
+
+        const link = document.createElement("a");
+        link.href = "#" + id;
+        link.textContent = folder;
+        nav.appendChild(link);
+      }
+    }
+
+    function filterItems(keyword) {
+      keyword = keyword.toLowerCase();
+      content.innerHTML = "";
+      for (const folder in navData) {
+        const matched = navData[folder].filter(item =>
+          item.title.toLowerCase().includes(keyword)
+        );
+        if (matched.length > 0) {
+          const header = document.createElement("h3");
+          header.textContent = folder;
+          content.appendChild(header);
+          const ul = document.createElement("ul");
+          matched.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${item.url}" target="_blank">${item.title}</a>`;
+            ul.appendChild(li);
+          });
+          content.appendChild(ul);
+        }
+      }
+    }
+
+    window.onload = renderAll;
+  </script>
+</body>
+</html>
